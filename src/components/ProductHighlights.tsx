@@ -7,7 +7,7 @@
  */
 
 import { useRef, useEffect, useState } from 'react';
-import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { 
   CubeTransparentIcon, 
   BoltIcon, 
@@ -109,9 +109,7 @@ interface CardProps {
   i: number; // Index for positioning
   title: string;
   description: string;
-  icon: React.ForwardRefExoticComponent<any>;
-  progress: any; // Scroll progress value
-  range: [number, number]; // Range for scroll-based animations
+  icon: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>;
 }
 
 /**
@@ -123,15 +121,9 @@ const Card: React.FC<CardProps> = ({
   title,
   description,
   icon: Icon,
-  progress,
-  range,
 }) => {
   // Ref for scroll tracking
   const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start end', 'start start'], // When card enters viewport until it reaches top
-  });
 
   // Use useInView to trigger typing animation when card is visible
   const isInView = useInView(container, { 
@@ -323,10 +315,6 @@ const TabletCard: React.FC<TabletCardProps> = ({ title, description, icon: Icon,
  */
 export default function ProductHighlights() {
   const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start start', 'end end'], // Full section scroll tracking
-  });
 
   // Lenis smooth scrolling is now handled by the global SmoothScrollProvider
 
@@ -390,8 +378,6 @@ export default function ProductHighlights() {
               title={highlight.title}
               description={highlight.description}
               icon={highlight.icon}
-              progress={scrollYProgress}
-              range={[i * 0.25, 1]}
             />
           );
         })}

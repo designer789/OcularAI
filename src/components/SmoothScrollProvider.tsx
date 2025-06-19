@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext, useEffect, useRef, ReactNode } from 'react';
-import Lenis from '@studio-freight/lenis';
+import Lenis from 'lenis';
 
 interface SmoothScrollContextType {
   lenis: Lenis | null;
@@ -32,7 +32,7 @@ export default function SmoothScrollProvider({ children }: SmoothScrollProviderP
     // Initialize Lenis
     lenisRef.current = new Lenis({
       duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
