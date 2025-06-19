@@ -72,7 +72,7 @@ function TypewriterText({ text, speed = 30, className = '', delay = 0, isVisible
 interface HighlightItem {
   title: string;
   description: string;
-  icon: React.ForwardRefExoticComponent<any>;
+  icon: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>;
 }
 
 // Product highlight data with corresponding icons

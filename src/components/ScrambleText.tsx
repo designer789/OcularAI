@@ -32,7 +32,7 @@ export default function ScrambleText({
     }
     
     intervalRef.current = setInterval(() => {
-      setDisplayText(_ => {
+      setDisplayText(() => {
         return originalTextRef.current
           .split('')
           .map((char, index) => {
