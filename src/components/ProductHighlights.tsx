@@ -238,7 +238,7 @@ const Card: React.FC<CardProps> = ({
 interface MobileCardProps {
   title: string;
   description: string;
-  icon: React.ForwardRefExoticComponent<any>;
+  icon: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>;
   index: number;
 }
 
@@ -277,7 +277,7 @@ const MobileCard: React.FC<MobileCardProps> = ({ title, description, icon: Icon,
 interface TabletCardProps {
   title: string;
   description: string;
-  icon: React.ForwardRefExoticComponent<any>;
+  icon: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>;
   index: number;
 }
 

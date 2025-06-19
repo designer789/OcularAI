@@ -5,7 +5,7 @@ import Lenis from 'lenis';
 
 interface SmoothScrollContextType {
   lenis: Lenis | null;
-  scrollTo: (target: number | string | HTMLElement, options?: any) => void;
+  scrollTo: (target: number | string | HTMLElement, options?: Record<string, unknown>) => void;
 }
 
 const SmoothScrollContext = createContext<SmoothScrollContextType>({
@@ -56,7 +56,7 @@ export default function SmoothScrollProvider({ children }: SmoothScrollProviderP
     };
   }, []);
 
-  const scrollTo = (target: number | string | HTMLElement, options?: any) => {
+  const scrollTo = (target: number | string | HTMLElement, options?: Record<string, unknown>) => {
     if (lenisRef.current) {
       lenisRef.current.scrollTo(target, options);
     }

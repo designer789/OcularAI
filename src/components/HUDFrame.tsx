@@ -35,7 +35,7 @@ const SocialButtons = () => {
   );
 };
 
-export default function FixedBorder({ children }: FixedBorderProps) {
+export default function FixedBorder({ }: FixedBorderProps) {
   return (
     <div className="fixed top-0 left-0 w-full h-full pointer-events-none p-6 max-lg:p-4 max-md:p-2 z-[60]">
       <div className="relative w-full h-full border border-gray-600 flex justify-center items-start">
