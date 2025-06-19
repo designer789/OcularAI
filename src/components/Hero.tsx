@@ -14,7 +14,7 @@ export default function Hero() {
             </div>
             <div className="pt-4 sm:pt-6 lg:pt-8">
               <div className="relative inline-block group">
-                <a href="https://docs.ocular.xyz" target="_blank" rel="noopener noreferrer">
+                <a href="https://docs.ocularai.xyz/" target="_blank" rel="noopener noreferrer">
                 <button className="bg-sky-300 hover:bg-sky-400 text-gray-900 font-bold py-2.5 px-6 sm:py-3 sm:px-8 lg:py-4 lg:px-10 text-sm sm:text-base lg:text-lg uppercase-mono transition-all duration-300 [clip-path:polygon(8px_0%,100%_0,100%_calc(100%_-_8px),calc(100%_-_8px)_100%,0_100%,0%_8px)] sm:[clip-path:polygon(10px_0%,100%_0,100%_calc(100%_-_10px),calc(100%_-_10px)_100%,0_100%,0%_10px)] group-hover:scale-105 sm:group-hover:scale-108">
                   Documentation
                 </button>
