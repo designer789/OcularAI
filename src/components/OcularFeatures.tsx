@@ -5,7 +5,7 @@ import { ArrowPathIcon, CurrencyDollarIcon, LightBulbIcon } from '@heroicons/rea
 interface FeatureProps {
   title: string;
   description: string;
-  icon: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>;
+  icon: React.ForwardRefExoticComponent<any>;
 }
 
 const Feature: React.FC<FeatureProps> = ({ title, description, icon: Icon }) => {

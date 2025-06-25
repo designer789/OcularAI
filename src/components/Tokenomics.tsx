@@ -1,6 +1,6 @@
 'use client';
 
-// import { ChartPieIcon, CurrencyDollarIcon, ShieldCheckIcon, SparklesIcon, UserGroupIcon } from '@heroicons/react/24/outline';
+import { ChartPieIcon, CurrencyDollarIcon, ShieldCheckIcon, SparklesIcon, UserGroupIcon } from '@heroicons/react/24/outline';
 
 interface AllocationItem {
   name: string;

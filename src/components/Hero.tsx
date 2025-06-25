@@ -2,14 +2,29 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-screen flex items-center py-8 sm:py-12 lg:py-0 z-20">
-      <div className="container max-w-8xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-16">
+    <section className="relative w-full min-h-screen flex items-center py-8 sm:py-12 lg:py-20 xl:py-24 z-20 overflow-hidden">
+      {/* Background elements for desktop enhancement */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Animated gradient orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-400/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl animate-pulse delay-1000" />
+        
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(125,211,252,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(125,211,252,0.03)_1px,transparent_1px)] bg-[size:50px_50px] lg:bg-[size:80px_80px] xl:bg-[size:100px_100px]" />
+      </div>
+
+      <div className="container max-w-8xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-16 xl:gap-20">
           {/* Left side content */}
-          <div className="w-full lg:mb-48 lg:w-1/2 space-y-4 sm:space-y-6 lg:space-y-8 text-center lg:text-left">
+          <div className="w-full  lg:w-1/2 space-y-4 sm:space-y-6 lg:space-y-8 text-center lg:text-left">
             <div className="space-y-2 sm:space-y-3">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-semibold leading-tight sm:leading-none tracking-tighter text-white">
-                True Crypto World Starts with Your Eyes
+                True Crypto World{' '}
+                <span className="relative inline-block">
+                  <span className="relative z-10">Starts with</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-sky-300/20 to-blue-400/20 blur-sm" />
+                </span>{' '}
+                Your Eyes
               </h1>
             </div>
             <div className="pt-4 sm:pt-6 lg:pt-8">
@@ -27,17 +42,35 @@ export default function Hero() {
             </div>
           </div>
           
-          {/* Right side image - only visible on tablet and mobile */}
-          <div className="w-full lg:w-1/2 lg:hidden flex justify-center items-center">
-            <div className="relative w-full max-w-md md:max-w-lg">
-              <Image
-                src="/p1.png"
-                alt="OcularAI Smart Glasses"
-                width={600}
-                height={600}
-                className="w-full h-auto object-contain"
-                priority
-              />
+          {/* Right side image - enhanced for desktop */}
+          <div className="w-full lg:w-1/2 flex justify-center items-center relative">
+            {/* Image container with enhanced effects */}
+            <div className="relative w-full max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
+              {/* Glow effect behind image */}
+              <div className="absolute inset-0 bg-gradient-to-br from-sky-300/20 via-transparent to-blue-400/20 blur-2xl scale-110 opacity-60" />
+              
+              {/* HUD frame around image for desktop */}
+              <div className="hidden lg:block absolute -inset-4 xl:-inset-8">
+                <div className="absolute top-0 left-0 w-8 h-8 xl:w-12 xl:h-12 border-t-2 border-l-2 border-sky-300/50" />
+                <div className="absolute top-0 right-0 w-8 h-8 xl:w-12 xl:h-12 border-t-2 border-r-2 border-sky-300/50" />
+                <div className="absolute bottom-0 left-0 w-8 h-8 xl:w-12 xl:h-12 border-b-2 border-l-2 border-sky-300/50" />
+                <div className="absolute bottom-0 right-0 w-8 h-8 xl:w-12 xl:h-12 border-b-2 border-r-2 border-sky-300/50" />
+              </div>
+              
+              <div className="relative z-10">
+                <Image
+                  src="/p1.png"
+                  alt="OcularAI Smart Glasses"
+                  width={1000}
+                  height={1000}
+                  className="w-full h-auto object-contain drop-shadow-2xl"
+                  priority
+                />
+              </div>
+              
+              {/* Floating elements for desktop */}
+              <div className="hidden lg:block absolute -top-4 -right-4 xl:-top-8 xl:-right-8 w-3 h-3 xl:w-4 xl:h-4 bg-sky-300 animate-pulse" />
+              <div className="hidden lg:block absolute -bottom-4 -left-4 xl:-bottom-8 xl:-left-8 w-2 h-2 xl:w-3 xl:h-3 bg-sky-300 animate-pulse delay-500" />
             </div>
           </div>
         </div>

@@ -8,7 +8,6 @@ import Roadmap from '@/components/Roadmap';
 import FAQ from '@/components/FAQ';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
-import Spline3DShowcase from '@/components/Spline3DShowcase';
 
 export default function Home() {
   return (
@@ -17,9 +16,7 @@ export default function Home() {
       <section id="Hero">
         <Hero />
       </section>
-      <section id="Experience">
-        <Spline3DShowcase />
-      </section>
+     
       <section id="Description">
         <Description />
       </section>
