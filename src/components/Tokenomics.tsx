@@ -1,39 +1,10 @@
 'use client';
 
-interface AllocationItem {
-  name: string;
-  percentage: number;
-
-}
-
 interface UtilityItem {
   title: string;
   description: string;
  
 }
-
-const allocations: AllocationItem[] = [
-  {
-    name: "Fair Launch",
-    percentage: 60
-  },
-  {
-    name: "DePIN Incentives & Staking",
-    percentage: 15
-  },
-  {
-    name: "AI Training & Model Contribution",
-    percentage: 10
-  },
-  {
-    name: "Marketing & Ecosystem Growth",
-    percentage: 10
-  },
-  {
-    name: "Team & Advisors",
-    percentage: 5
-  }
-];
 
 const utilities: UtilityItem[] = [
   {
@@ -58,15 +29,6 @@ const utilities: UtilityItem[] = [
   }
 ];
 
-const AllocationBar: React.FC<{ percentage: number; color: string }> = ({ percentage, color }) => (
-  <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
-    <div 
-      className={`h-full ${color} transition-all duration-1000 ease-out`}
-      style={{ width: `${percentage}%` }}
-    />
-  </div>
-);
-
 export default function Tokenomics() {
   return (
     <section className="py-24">
@@ -88,25 +50,6 @@ export default function Tokenomics() {
                 </p>
               </div>
 
-              <div className="space-y-8">
-                <h3 className="text-2xl font-semibold text-sky-300 mb-6 tracking-tighter font-mono uppercase text-shadow-md">
-                  Token Allocation
-                </h3>
-                
-                {allocations.map((item, index) => (
-                  <div key={`allocation-${index}`} className="mb-6">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-300 font-mono uppercase tracking-tight">{item.name}</span>
-                      <span className="text-sky-300 font-mono">{item.percentage}%</span>
-                    </div>
-                    <AllocationBar 
-                      percentage={item.percentage} 
-                      color={index === 0 ? 'bg-sky-300' : 'bg-sky-500'} 
-                    />
-                   
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
           
